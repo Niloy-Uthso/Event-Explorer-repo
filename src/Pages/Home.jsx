@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { valueContext } from '../Rootlayout';
+ 
 import Events from '../components/Events';
 import { useLoaderData } from 'react-router';
 
@@ -7,7 +7,7 @@ const Home = () => {
 
     const data=useLoaderData()
     
-    const {currentUser}=useContext(valueContext)
+    
     return (
         <div  className=''>
              <div className="carousel h-[70vh] w-full">

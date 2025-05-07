@@ -1,24 +1,27 @@
 import React from 'react';
+import { NavLink } from 'react-router';
 
 const Event = ({event}) => {
-    console.log(event)
+    
     return (
         <div>
-            <div className="card bg-base-100 w-96 shadow-sm">
+            <div className="card bg-base-100 w-96 h-[100%] shadow-sm">
   <figure>
-    <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+    <img className='w-full h-full'
+      src= {event.thumbnail}
       alt="Shoes" />
   </figure>
   <div className="card-body">
     <h2 className="card-title">
-      Card Title
-      <div className="badge badge-secondary">NEW</div>
+       {event.name}
+      <div className="badge badge-secondary">{event.category}</div>
     </h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
+    <p>{event.description}</p>
     <div className="card-actions justify-end">
-      <div className="badge badge-outline">Fashion</div>
-      <div className="badge badge-outline">Products</div>
+      <div className="badge badge-outline">{event.date}</div>
+       
+      <NavLink  className="badge badge-outline text-pink-600 hover:bg-pink-200 cursor-pointer" 
+ to={`/${event.id}`}>View More!!</NavLink>
     </div>
   </div>
 </div>

@@ -6,6 +6,7 @@ import Rootlayout from "../Rootlayout";
 import Home from "../Pages/Home";
 import Login from "../components/Login";
 import Register from "../components/Register";
+import Eventdetails from "../Pages/Eventdetails";
 
 
     export  const router = createBrowserRouter([
@@ -16,9 +17,7 @@ import Register from "../components/Register";
        {
          path:"/",
           Component:Home,
-          loader:()=>fetch('../data.json',)
-
-          
+          loader:()=>fetch('../data.json',)   
       },
       {
         path:"/login",
@@ -27,7 +26,12 @@ import Register from "../components/Register";
      {
       path:"/register",
        Component:Register
-   }
+     },
+     {
+      path:"/:id",
+      Component:Eventdetails,
+      loader:()=>fetch('../data.json',)   
+     }
 
        ]
     },

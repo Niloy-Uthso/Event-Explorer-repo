@@ -42,7 +42,7 @@ if (!regex.test(password)) {
   <input type="email" class="input" name='email' placeholder="Email" />
 
   <label class="label">Password</label>
-  <input type="password" class="input" name='password' placeholder="Password" />
+  <input type="text" class="input" name='password' placeholder="Password" />
 
  <div className='flex justify-between items-center  gap-3'>
  <button type='submit' class="btn btn-neutral mt-4"> Register</button>

@@ -1,12 +1,62 @@
 [
     {
         "id": "event_001",
-        "name": "Tech Innovators Conference 2025",
-       "thumbnail": "https://i.ibb.co/ZYW3VTp/tech-event.jpg",
-        "category": "Technology",
+        "name": "Community Potluck Picnic",
+       "thumbnail": "https://i.ibb.co.com/gZSLxgLJ/istockphoto-171293688-612x612.jpg",
+        "category": "Community",
         "date": "2025-05-15",
         "location": "Dhaka Convention Center, Dhaka",
         "entry_fee": 500,
-        "description": "An exclusive gathering of tech leaders and innovators from..."
+        "description": "Join us for a fun-filled potluck picnic where neighbors come together to share food, laughter, and friendship!"
+      },
+      {
+        "id": "event_002",
+        "name": "Charity Run for Hope",
+       "thumbnail": "https://i.ibb.co.com/bpTTrpB/images.jpg",
+        "category": "Charity",
+        "date": "2025-05-15",
+        "location": "Dhaka Convention Center, Dhaka",
+        "entry_fee": 500,
+        "description": "Lace up for a meaningful run to support a great cause and bring hope to those in need!"
+      },
+      {
+        "id": "event_003",
+        "name": "Summer Music Festival",
+       "thumbnail": "https://i.ibb.co.com/yc084ryc/tomorrowland-best-summer-music-festivals-europe.jpg",
+        "category": "Entertainment ",
+        "date": "2025-05-15",
+        "location": "Dhaka Convention Center, Dhaka",
+        "entry_fee": 500,
+        "description": "Celebrate the season with live performances, great vibes, and unforgettable musical moments!"
+      },
+      {
+        "id": "event_004",
+        "name": "Neighborhood Cleanup Drive",
+       "thumbnail": "https://i.ibb.co.com/gbJMDKGV/HSBC-Cleanup-Drive-blog-ftrd-img-lenu.jpg",
+        "category": "Volunteer",
+        "date": "2025-05-15",
+        "location": "Dhaka Convention Center, Dhaka",
+        "entry_fee": 500,
+        "description": "Let’s unite to clean and beautify our neighborhood — small efforts, big impact!"
+      },
+      {
+        "id": "event_005",
+        "name": "Cultural Exchange Night",
+       "thumbnail": "https://i.ibb.co.com/fdpMKjTx/hinh-anhjpeg-1-1.jpg",
+        "category": "Educational",
+        "date": "2025-05-15",
+        "location": "Dhaka Convention Center, Dhaka",
+        "entry_fee": 500,
+        "description": "Experience the richness of global cultures in one evening of sharing traditions, food, and stories!"
+      },
+      {
+        "id": "event_006",
+        "name": "Open Mic & Talent Show",
+       "thumbnail": "https://i.ibb.co.com/JF5wJ5N1/Open-Mic-4.jpg",
+        "category": "Performance",
+        "date": "2025-05-15",
+        "location": "Dhaka Convention Center, Dhaka",
+        "entry_fee": 500,
+        "description": "Take the spotlight or cheer others on at a lively night of music, poetry, and raw talent!"
       }
 ]
