@@ -10,8 +10,11 @@ import { auth } from './firebase/firebase.config';
  
 const Rootlayout = () => {
 
-    const [currentUser,setCurrentUser]=useState()
+    const [currentUser,setCurrentUser]=useState(null)
+    
+    const [loading,setLoading]=useState(true)
      
+     const[pic,setPic]=useState(null)
     console.log(currentUser)
     const handlelogin=(email,password)=>{
 
@@ -20,11 +23,16 @@ const Rootlayout = () => {
         
  }
 
- const handleregister=(email,password)=>{
+  
+ const handleregister=(email,password, photoURL)=>{
+    setPic(photoURL)
+    
   return  createUserWithEmailAndPassword(auth, email, password)
    
  }
-
+      
+   
+ 
  const handlelogout=()=>{
     signOut(auth).then(() => {
         // Sign-out successful.
@@ -36,9 +44,10 @@ const Rootlayout = () => {
 const context={
     handlelogin,
     handleregister,
-    
+    loading,
     currentUser,
-    handlelogout
+    handlelogout,
+    pic
 }
 
 useEffect(()=>{
@@ -47,10 +56,13 @@ useEffect(()=>{
           
              
             setCurrentUser(user)
+            setLoading(false)
+            
             if (user) {
               // User is signed in, see docs for a list of available properties
               // https://firebase.google.com/docs/reference/js/auth.user
               const uid = user.uid;
+              setPic(pic);
               // ...
             } else {
               // User is signed out
@@ -63,7 +75,7 @@ useEffect(()=>{
           }
     
 },[]);
-  
+
     return (
         <div>
             

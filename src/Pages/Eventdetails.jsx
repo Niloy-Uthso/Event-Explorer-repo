@@ -3,11 +3,13 @@ import { Navigate, useLoaderData, useNavigate, useParams } from 'react-router';
 import { valueContext } from '../Rootlayout';
 
 const Eventdetails = () => {
-    const {currentUser}=useContext(valueContext)
+    const {currentUser,loading}=useContext(valueContext)
+  
     
-    console.log(currentUser)
     const { id } = useParams();
     const events=useLoaderData()
+    if(loading)
+        return <p>Loading,,,,,</p>
     if(!currentUser||!currentUser.email){
         console.log('nai')
         return <Navigate to={'/login'}></Navigate>

@@ -12,15 +12,15 @@ const Register = () => {
 
        const password= e.target.password.value
        const email=e.target.email.value
-      
+       const photoURL = e.target.photo.value;
        const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-
+        
 if (!regex.test(password)) {
   alert("Password must be at least 6 characters and contain both uppercase and lowercase letters.");
   return;
 }
        
-       handleregister(email,password)
+       handleregister(email,password, photoURL)
        .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
@@ -43,6 +43,8 @@ if (!regex.test(password)) {
 
   <label class="label">Password</label>
   <input type="text" class="input" name='password' placeholder="Password" />
+  <label className="label">Photo URL</label>
+  <input  type="url"  className="input"  name="photo"  placeholder="Enter photo URL"/>
 
  <div className='flex justify-between items-center  gap-3'>
  <button type='submit' class="btn btn-neutral mt-4"> Register</button>
