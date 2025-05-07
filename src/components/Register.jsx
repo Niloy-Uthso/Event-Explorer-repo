@@ -1,21 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router';
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../firebase/firebase.config';
+ 
+import { valueContext } from '../Rootlayout';
 
 const Register = () => {
+    const {handleregister}=useContext(valueContext)
+    
     const navigate=useNavigate()
     const handleRegister=(e)=>{
         e.preventDefault()
 
        const password= e.target.password.value
        const email=e.target.email.value
+      
+       const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
-       createUserWithEmailAndPassword(auth, email, password)
+if (!regex.test(password)) {
+  alert("Password must be at least 6 characters and contain both uppercase and lowercase letters.");
+  return;
+}
+       
+       handleregister(email,password)
        .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
-        console.log(user)
+        // console.log(user)
         // ...
       })
       .catch((error) => {
@@ -23,6 +32,7 @@ const Register = () => {
         // const errorMessage = error.message;
         // ..
       });
+      
     }
     return (
         <form onSubmit={handleRegister} class=" bg-base-200 border-base-300 mx-auto mt-24 rounded-box w-xs border p-4">

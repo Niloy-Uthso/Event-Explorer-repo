@@ -1,27 +1,33 @@
-import React from 'react';
-import {  signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../firebase/firebase.config';
+
 import { useNavigate } from 'react-router';
+import { valueContext } from '../Rootlayout';
+import { useContext } from 'react';
 const Login = () => {
+
+    const {handlelogin}=useContext(valueContext)
+
+    
+
     const navigate=useNavigate()
+    
     const handleLogin=(e)=>{
         e.preventDefault()
 
        const password= e.target.password.value
        const email=e.target.email.value
-  console.log(email,password)
-       signInWithEmailAndPassword(auth, email, password)
-       .then((userCredential) => {
-        // Signed up 
-        const user = userCredential.user;
-        console.log(user)
-        // ...
-      })
-      .catch((error) => {
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        // ..
-      });
+        handlelogin(email,password)
+        .then((userCredential) => {
+                 // Signed up 
+                 const user = userCredential.user;
+                 
+                 // ...
+               })
+               .catch((error) => {
+                 // const errorCode = error.code;
+                 // const errorMessage = error.message;
+                 // ..
+               });
+      
     }
     return (
         <form onSubmit={handleLogin} class=" bg-base-200 border-base-300 mx-auto mt-24 rounded-box w-xs border p-4">

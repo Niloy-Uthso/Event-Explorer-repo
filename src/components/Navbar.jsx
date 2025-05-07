@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router';
+import { valueContext } from '../Rootlayout';
 
 const Navbar = () => {
     const navigate=useNavigate()
     const {pathname}=useLocation()
+
+    const {handlelogout}=useContext(valueContext)
     
     return (
         <>
@@ -38,6 +41,7 @@ const Navbar = () => {
       
     </div>
   </div>
+  <button onClick={handlelogout}>logout</button>
 </div>
        
         </>

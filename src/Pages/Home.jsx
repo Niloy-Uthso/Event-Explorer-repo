@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { valueContext } from '../Rootlayout';
 
 const Home = () => {
+
+    const {currentUser}=useContext(valueContext)
     return (
         <div  className='font-bold'>
-            niloy
+             
              
         </div>
     );
