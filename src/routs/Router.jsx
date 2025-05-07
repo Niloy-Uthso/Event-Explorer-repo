@@ -15,7 +15,10 @@ import Register from "../components/Register";
        children:[
        {
          path:"/",
-          Component:Home
+          Component:Home,
+          loader:()=>fetch('../data.json',)
+
+          
       },
       {
         path:"/login",

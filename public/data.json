@@ -1,0 +1,12 @@
+[
+    {
+        "id": "event_001",
+        "name": "Tech Innovators Conference 2025",
+       "thumbnail": "https://i.ibb.co/ZYW3VTp/tech-event.jpg",
+        "category": "Technology",
+        "date": "2025-05-15",
+        "location": "Dhaka Convention Center, Dhaka",
+        "entry_fee": 500,
+        "description": "An exclusive gathering of tech leaders and innovators from..."
+      }
+]
