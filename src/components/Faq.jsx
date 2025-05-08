@@ -27,7 +27,7 @@ const Faq = () => {
   };
 
   return (
-    <section className="max-w-4xl mx-auto p-6 my-12 bg-base-100 shadow rounded">
+    <section className="max-w-4xl faq mx-auto p-6 my-12 bg-base-100 shadow rounded">
       <h2 data-aos="fade-up" className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (

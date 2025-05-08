@@ -28,8 +28,8 @@ const Eventdetails = () => {
      
      
     return (
-        <div data-aos="fade-up" className=''>
-            <div className="card mx-auto mt-10 bg-base-100  w-[70%] md:w-[50%] h-[100%] shadow-sm">
+        <div data-aos="fade-up" className='yellow pt-0.5 pb-2'>
+            <div className="card mx-auto mt-4 bg-base-100  w-[70%] md:w-[50%] h-[100%] shadow-sm">
   <figure>
     <img className='w-full h-full'
       src= {event.thumbnail}

@@ -60,8 +60,10 @@ const Home = () => {
        <Events data={data}></Events>   
 
        <Faq></Faq> 
-
-       <Feedback></Feedback> 
+      
+      <Feedback></Feedback>
+       
+        
         </div>
     );
 };

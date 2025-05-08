@@ -9,3 +9,27 @@
     font-variation-settings:
       "wdth" 100;
   }
+
+  .yellow{
+
+    background-color: yellowgreen;
+
+  }
+
+  .nav{
+    background-color: aquamarine;
+  }
+  .events{
+    background-color: antiquewhite;
+  }
+  .faq{
+    background-color: bisque;
+  }
+
+  .about{
+     background-color:skyblue
+  }
+
+  .outlet{
+     background-color: beige;
+  }

@@ -12,7 +12,7 @@ const Navbar = () => {
      
     return (
         <>
-         <div className="navbar flex justify-between bg-base-100 border shadow-sm">
+         <div className="navbar nav flex justify-between bg-base-100  shadow-sm">
   <div className="flex">
     <a className="font-bold text-pink-700 text-sm md:text-xl">SocialSphere</a>
    
@@ -28,14 +28,17 @@ const Navbar = () => {
     
           
    
-     <div className=" ">
+     <div className=" flex gap-1 md:gap-6 items-center ">
+        {
+            currentUser?<p>{currentUser.displayName}</p>:''
+        }
     {
         currentUser?<div onClick={() =>navigate('/profile') } tabIndex={0} role="button"  className="btn btn-ghost  btn-circle avatar tooltip tooltip-right"
         data-tip={currentUser.displayName || 'No name set'}
         >
-   
+        
         <div className="w-10 rounded-full">
-            
+             
         <img src={currentUser.photoURL}/>
         </div>
       </div>:''

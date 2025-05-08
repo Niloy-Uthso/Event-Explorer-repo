@@ -142,7 +142,9 @@ useEffect(()=>{
             <valueContext.Provider value={context}>
           <Navbar></Navbar>
           <Toaster  position="top-right"></Toaster>
-          <Outlet></Outlet>
+         <div className='pb-4 border border-dotted border-gray-500  outlet'>
+         <Outlet></Outlet>
+         </div>
           <Footer></Footer>
           </valueContext.Provider>
             </HelmetProvider>
