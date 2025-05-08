@@ -16,7 +16,7 @@ const MyProfile = () => {
   if(loading)
       return <p>Loading,,,,,</p>
   if(!currentUser||!currentUser.email){
-      console.log('nai')
+       
       return <Navigate  to={'/login'}></Navigate>
   }
   const handleUpdate = async (e) => {

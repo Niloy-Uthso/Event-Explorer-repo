@@ -5,7 +5,7 @@ const Footer = () => {
     <div className="bg-base-300 text-base-content mt-20 py-10 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
 
-        {/* About */}
+        
         <div>
           <h1 className="text-xl font-bold text-indigo-500 mb-2">SocialSphere</h1>
           <p className="text-sm text-gray-400">
@@ -13,7 +13,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Links */}
+        
         <div>
           <h1 className="text-lg font-semibold mb-2">Links</h1>
           <p className="text-sm hover:underline cursor-pointer">Terms & Conditions</p>
@@ -21,7 +21,7 @@ const Footer = () => {
           <p className="text-sm hover:underline cursor-pointer">Contact Us</p>
         </div>
 
-        {/* Socials */}
+        
         <div>
           <h1 className="text-lg font-semibold mb-2">Follow Us</h1>
           <p className="text-sm">🌐 Facebook</p>

@@ -6,8 +6,8 @@ const Navbar = () => {
     const navigate=useNavigate()
     const {pathname}=useLocation()
 
-    const {handlelogout,currentUser,handlelogin,pic,loading}=useContext(valueContext)
-    console.log(currentUser)
+    const {handlelogout,currentUser}=useContext(valueContext)
+     
     
      
     return (
@@ -21,20 +21,14 @@ const Navbar = () => {
                   isActive ? 'text-indigo-600  text-[10px] md:text-xl font-bold' : 'font-bold  text-[10px] md:text-xl'
                 }
  to={'/'}>Home</NavLink>
-  {/* <button onClick={ currentUser? ()=>navigate('/login'):{handlelogout()}} className={`btn btn-xs sm:btn-sm ${pathname==="/login"?"text-indigo-600":""}`}>{currentUser?"logout":"login"}</button> */}
 
   
   <button onClick={()=>navigate('/register')} className={` ${currentUser?`hidden`:``} btn btn-xs sm:btn-sm ${pathname==="/register"?"text-indigo-600":""}`}>Register</button>
   <div className="flex gap-6 items-center ">
-    {/* <div className="dropdown dropdown-end">
-       
-               {
-                currentUser?<p className='font-extralight text-yellow-400'>{currentUser.displayName}</p>:''
-              }
-    </div> */}
+    
           
    
-     <div className=" border border-red-600 ">
+     <div className=" ">
     {
         currentUser?<div onClick={() =>navigate('/profile') } tabIndex={0} role="button"  className="btn btn-ghost  btn-circle avatar tooltip tooltip-right"
         data-tip={currentUser.displayName || 'No name set'}

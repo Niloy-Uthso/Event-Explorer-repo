@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { useLocation, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
  
 import { valueContext } from '../Rootlayout';
 import { updateProfile } from 'firebase/auth';

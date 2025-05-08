@@ -22,7 +22,7 @@ const Rootlayout = () => {
     const forceSetCurrentUser = (user) => {
         setCurrentUser({ ...user });
       };
-    console.log(currentUser)
+     
 
     const handlelogin=(email,password)=>{
      
@@ -69,7 +69,7 @@ const Rootlayout = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
   .then((result) => {
-    console.log('clicked')
+    
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const token = credential.accessToken;
