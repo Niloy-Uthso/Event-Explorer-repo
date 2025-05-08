@@ -1,12 +1,23 @@
-# React + Vite
+# Project Name
+Making a Event related site named SocialSphere
+## Purpose
+ This project centers around creating a platform that enables users to discover, explore, and get details about upcoming local events such as conferences, workshops, sports events, art exhibitions, and more. Users can log in, browse events, view detailed info, and leave feedback or ratings for events they attend.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Live URL
+[Click here to view the live site](https://effervescent-dieffenbachia-880115.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Key Features
+- Firebase Authentication
+- Responsive design
+- Event creation and management
+- User profile updates
+- etc.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## NPM Packages Used
+- react-router-dom
+- firebase
+- react-hot-toast
+- react-icons
+- aos
+- tailwindcss
