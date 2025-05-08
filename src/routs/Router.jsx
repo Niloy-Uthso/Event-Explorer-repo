@@ -7,12 +7,16 @@ import Home from "../Pages/Home";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import Eventdetails from "../Pages/Eventdetails";
-
+import ErrorPage from "../Pages/ErrorPage";
+import Extra from "../Pages/Extra";
+import MyProfile from "../Pages/MyProfile";
+ 
 
     export  const router = createBrowserRouter([
     {
       path: "/",
        Component:Rootlayout,
+       errorElement:<ErrorPage></ErrorPage>,
        children:[
        {
          path:"/",
@@ -31,6 +35,14 @@ import Eventdetails from "../Pages/Eventdetails";
       path:"/:id",
       Component:Eventdetails,
       loader:()=>fetch('../data.json',)   
+     },
+     {
+      path:"/extra",
+      Component:Extra
+     },
+     {
+      path:"/profile",
+      Component:MyProfile
      }
 
        ]

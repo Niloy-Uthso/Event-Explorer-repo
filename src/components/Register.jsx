@@ -2,9 +2,11 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router';
  
 import { valueContext } from '../Rootlayout';
+import { updateProfile } from 'firebase/auth';
+import { auth } from '../firebase/firebase.config';
 
 const Register = () => {
-    const {handleregister}=useContext(valueContext)
+    const {handleregister, forceSetCurrentUser}=useContext(valueContext)
     
     const navigate=useNavigate()
     const handleRegister=(e)=>{
@@ -12,7 +14,9 @@ const Register = () => {
 
        const password= e.target.password.value
        const email=e.target.email.value
-       const photoURL = e.target.photo.value;
+       const displayName= e.target.displayName.value;
+       const photoURL=e.target.photoURL.value
+       console.log( photoURL)
        const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         
 if (!regex.test(password)) {
@@ -20,12 +24,23 @@ if (!regex.test(password)) {
   return;
 }
        
-       handleregister(email,password, photoURL)
+       handleregister(email,password,photoURL)
        .then((userCredential) => {
         // Signed up 
         const user = userCredential.user;
         // console.log(user)
         // ...
+        updateProfile(user, {
+            displayName: displayName,
+            photoURL:photoURL
+          }).then(() => {
+            console.log("Profile updated");
+            forceSetCurrentUser(auth.currentUser);
+            // Optionally navigate to another page
+            // navigate('/somewhere')
+          }).catch((error) => {
+            console.error("Profile update failed:", error);
+          });
       })
       .catch((error) => {
         // const errorCode = error.code;
@@ -44,7 +59,9 @@ if (!regex.test(password)) {
   <label class="label">Password</label>
   <input type="text" class="input" name='password' placeholder="Password" />
   <label className="label">Photo URL</label>
-  <input  type="url"  className="input"  name="photo"  placeholder="Enter photo URL"/>
+  <input  type="text"  class="input"  name='displayName'  placeholder="Enter photo URL"/>
+  <label className="label">Photo URL</label>
+  <input  type="url"  class="input"  name='photoURL'  placeholder="Enter photo URL"/>
 
  <div className='flex justify-between items-center  gap-3'>
  <button type='submit' class="btn btn-neutral mt-4"> Register</button>

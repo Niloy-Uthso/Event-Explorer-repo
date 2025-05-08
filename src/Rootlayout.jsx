@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState, } from 'react';
 import { Outlet } from 'react-router';
 import Navbar from './components/Navbar';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
 import { auth } from './firebase/firebase.config';
 
  export const valueContext=createContext()
@@ -14,19 +14,19 @@ const Rootlayout = () => {
     
     const [loading,setLoading]=useState(true)
      
-     const[pic,setPic]=useState(null)
+    const forceSetCurrentUser = (user) => {
+        setCurrentUser({ ...user });
+      };
     console.log(currentUser)
     const handlelogin=(email,password)=>{
-
-         
+     
       return  signInWithEmailAndPassword(auth, email, password)
         
  }
 
   
- const handleregister=(email,password, photoURL)=>{
-    setPic(photoURL)
-    
+ const handleregister=(email,password)=>{
+
   return  createUserWithEmailAndPassword(auth, email, password)
    
  }
@@ -47,14 +47,15 @@ const context={
     loading,
     currentUser,
     handlelogout,
-    pic
+    forceSetCurrentUser
+    
 }
-
+//   console.log()
 useEffect(()=>{
     
      const unsubscribe=   onAuthStateChanged(auth, (user) => {
           
-             
+              
             setCurrentUser(user)
             setLoading(false)
             
@@ -62,7 +63,7 @@ useEffect(()=>{
               // User is signed in, see docs for a list of available properties
               // https://firebase.google.com/docs/reference/js/auth.user
               const uid = user.uid;
-              setPic(pic);
+              
               // ...
             } else {
               // User is signed out

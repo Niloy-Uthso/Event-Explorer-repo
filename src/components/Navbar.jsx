@@ -7,7 +7,8 @@ const Navbar = () => {
     const {pathname}=useLocation()
 
     const {handlelogout,currentUser,handlelogin,pic,loading}=useContext(valueContext)
-    console.log(pic)
+    console.log(currentUser)
+    
      
     return (
         <>
@@ -24,24 +25,30 @@ const Navbar = () => {
 
   
   <button onClick={()=>navigate('/register')} className={` ${currentUser?`hidden`:``} btn btn-xs sm:btn-sm ${pathname==="/register"?"text-indigo-600":""}`}>Register</button>
-  <div className="flex-none border">
+  <div className="flex gap-6 items-center ">
     <div className="dropdown dropdown-end">
-      
-      
+       
+               {
+                currentUser?<p>{currentUser.displayName}</p>:''
+              }
     </div>
-    <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+          
+   
+     <div className=" border border-red-600 ">
+    {
+        currentUser?<div onClick={() =>navigate('/profile') } tabIndex={0} role="button"  className="btn btn-ghost  btn-circle avatar tooltip tooltip-right"
+        data-tip={currentUser.displayName || 'No name set'}
+        >
+   
         <div className="w-10 rounded-full">
-        <img
-  alt="Tailwind CSS Navbar component"
-  src={currentUser || pic
-    ?  pic
-    : "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}
-/>
+            
+        <img src={currentUser.photoURL}/>
         </div>
-      </div>
-      
-    </div>
+      </div>:''
+    }
+    
+  </div>
+   
   </div>
   {/* {currentUser ? (
          <button
@@ -64,6 +71,11 @@ const Navbar = () => {
 >
   {currentUser ? "Logout" : "Login"}
 </button>
+
+<NavLink className={({ isActive }) =>
+                  isActive ? 'text-indigo-600' : ''
+                }
+ to={'/extra'}>About us</NavLink>
 </div>
        
         </>

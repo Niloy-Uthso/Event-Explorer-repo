@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
  
 import Events from '../components/Events';
 import { useLoaderData } from 'react-router';
+import Faq from '../components/Faq';
+import Feedback from '../components/Feedback';
 
 const Home = () => {
 
@@ -51,7 +53,11 @@ const Home = () => {
 
 </div>
 
-       <Events data={data}></Events>     
+       <Events data={data}></Events>   
+
+       <Faq></Faq> 
+
+       <Feedback></Feedback> 
         </div>
     );
 };
