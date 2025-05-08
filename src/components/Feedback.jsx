@@ -2,7 +2,7 @@ import React from 'react';
 
 const Feedback = () => {
     return (
-        <div className="bg-base-200 py-10 px-6 rounded-lg shadow-lg max-w-5xl mx-auto my-8">
+        <div data-aos="fade-up"  className="bg-base-200 py-10 px-6 rounded-lg shadow-lg max-w-5xl mx-auto my-8">
       <h1 className="text-3xl font-bold text-center text-indigo-600 mb-6">What Our Community Says</h1>
 
       <div className="grid md:grid-cols-2 gap-6">

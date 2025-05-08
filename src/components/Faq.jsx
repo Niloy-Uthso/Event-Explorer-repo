@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 
 const faqs = [
   {
-    question: "What is this website about?",
-    answer: "This website helps users manage their profiles securely using Firebase authentication and provides event-related features."
+    question: "What is this platform used for?",
+    answer: "Our platform allows users to discover, organize, and participate in a wide range of social events, from local meetups to large community gatherings."
   },
   {
-    question: "How can I update my profile information?",
-    answer: "You can go to the 'My Profile' page after logging in and update your name or profile picture."
+    question: "How can I create or host an event?",
+    answer: "After signing in, simply go to the Event detail page, fill in the details like title, date, location, and description, and your event will be listed for others to see and join."
   },
   {
-    question: "Is my data secure?",
-    answer: "Yes, we use Firebase Authentication and Firestore to ensure your data is securely stored and accessed."
+    question: "Do I need an account to attend an event?",
+    answer: "Yes, creating a free account helps us ensure secure participation and allows you to RSVP, receive updates, and interact with other attendees."
   },
   {
-    question: "Can I use this on mobile devices?",
-    answer: "Absolutely! Our site is fully responsive and mobile-friendly."
+    question: "Is it possible to edit or cancel an event after publishing?",
+    answer: "Absolutely! You can manage your events from the My Events dashboard where you can edit details or cancel if needed."
   }
 ];
 
@@ -28,7 +28,7 @@ const Faq = () => {
 
   return (
     <section className="max-w-4xl mx-auto p-6 my-12 bg-base-100 shadow rounded">
-      <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+      <h2 data-aos="fade-up" className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
           <div

@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { Navigate, useLoaderData, useNavigate, useParams } from 'react-router';
+import { Navigate, useLoaderData, useLocation, useNavigate, useParams } from 'react-router';
 import { valueContext } from '../Rootlayout';
+import toast from 'react-hot-toast';
 
 const Eventdetails = () => {
     const {currentUser,loading}=useContext(valueContext)
@@ -8,15 +9,18 @@ const Eventdetails = () => {
     
     const { id } = useParams();
     const events=useLoaderData()
+    // const location=useLocation()
+    
     if(loading)
         return <p>Loading,,,,,</p>
     if(!currentUser||!currentUser.email){
         console.log('nai')
-        return <Navigate to={'/login'}></Navigate>
+        return <Navigate  to={'/login'}></Navigate>
+        // state={{from:location.pathname}}
     }
-    
+    // 
     const handlesubmit=()=>{
-        alert("success")
+         alert('thank')
     }
     
 
@@ -24,8 +28,8 @@ const Eventdetails = () => {
      
      
     return (
-        <div className=''>
-            <div className="card mx-auto mt-10 bg-base-100 w-[50%] h-[100%] shadow-sm">
+        <div data-aos="fade-up" className=''>
+            <div className="card mx-auto mt-10 bg-base-100  w-[70%] md:w-[50%] h-[100%] shadow-sm">
   <figure>
     <img className='w-full h-full'
       src= {event.thumbnail}
@@ -46,8 +50,8 @@ const Eventdetails = () => {
     <div> <span className='font-bold text-2xl text-red-600'>Location:</span><span className='text-yellow-400 font-semibold text-xl'>{event.location}</span></div>
   </div>
 
-  <h1 className='mx-auto text-3xl font-bold'>Want to participate??Fill up the form below:</h1>
-  <form onSubmit={handlesubmit} class=" bg-base-200 border-base-300 mx-auto mt-5 rounded-box w-xs border p-4">
+  <h1 className='mx-auto text-xl ml-1 md:text-3xl font-bold'>Want to participate??Fill up the form below:</h1>
+  <form onSubmit={handlesubmit} class=" bg-base-200 border-base-300 mx-auto mt-5 rounded-box w-52 mb-1 md:w-xs border p-4">
    
 
    <label class="label">Name</label>

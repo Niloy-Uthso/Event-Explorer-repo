@@ -4,6 +4,7 @@ import Events from '../components/Events';
 import { useLoaderData } from 'react-router';
 import Faq from '../components/Faq';
 import Feedback from '../components/Feedback';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
 
@@ -12,6 +13,9 @@ const Home = () => {
     
     return (
         <div  className=''>
+             <Helmet>
+        <title>Home | SocialSphere</title>
+      </Helmet>
              <div className="carousel h-[70vh] w-full">
   <div id="slide1" className="carousel-item relative w-full">
     <img

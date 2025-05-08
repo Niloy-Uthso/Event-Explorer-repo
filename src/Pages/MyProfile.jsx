@@ -2,15 +2,23 @@ import React, { useContext, useState } from 'react';
 import { updateProfile } from 'firebase/auth';
 import { auth } from '../firebase/firebase.config';
 import { valueContext } from '../Rootlayout';
+import { Navigate, useLocation } from 'react-router';
+import toast from 'react-hot-toast';
 
 const MyProfile = () => {
-  const { currentUser,forceSetCurrentUser } = useContext(valueContext);
+  const { currentUser,forceSetCurrentUser,loading } = useContext(valueContext);
 
   // Controlled input state
   const [name, setName] = useState(currentUser?.displayName || '');
   const [photoURL, setPhotoURL] = useState(currentUser?.photoURL || '');
   const [success, setSuccess] = useState('');
-
+   
+  if(loading)
+      return <p>Loading,,,,,</p>
+  if(!currentUser||!currentUser.email){
+      console.log('nai')
+      return <Navigate  to={'/login'}></Navigate>
+  }
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
@@ -20,6 +28,7 @@ const MyProfile = () => {
       });
       forceSetCurrentUser(auth.currentUser);
       // Optional: force re-render by updating state or navigating
+      toast.success('Updated info Successfully!');
       setSuccess('Profile updated successfully!');
     } catch (err) {
       console.error('Update failed:', err);
@@ -28,7 +37,7 @@ const MyProfile = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 border rounded shadow bg-base-100">
+    <div data-aos="fade-up" className=" w-72 md:w-[448px]  mx-auto mt-10 p-6 border rounded shadow bg-base-100">
       <h2 className="text-2xl font-bold mb-4">My Profile</h2>
 
       {success && <p className="mb-4 text-green-500">{success}</p>}

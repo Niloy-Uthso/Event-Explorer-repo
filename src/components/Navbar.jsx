@@ -14,11 +14,11 @@ const Navbar = () => {
         <>
          <div className="navbar flex justify-between bg-base-100 border shadow-sm">
   <div className="flex">
-    <a className="btn btn-ghost text-xl">Events</a>
+    <a className="font-bold text-pink-700 text-sm md:text-xl">SocialSphere</a>
    
   </div>
     <NavLink className={({ isActive }) =>
-                  isActive ? 'text-indigo-600' : ''
+                  isActive ? 'text-indigo-600  text-[10px] md:text-xl font-bold' : 'font-bold  text-[10px] md:text-xl'
                 }
  to={'/'}>Home</NavLink>
   {/* <button onClick={ currentUser? ()=>navigate('/login'):{handlelogout()}} className={`btn btn-xs sm:btn-sm ${pathname==="/login"?"text-indigo-600":""}`}>{currentUser?"logout":"login"}</button> */}
@@ -26,12 +26,12 @@ const Navbar = () => {
   
   <button onClick={()=>navigate('/register')} className={` ${currentUser?`hidden`:``} btn btn-xs sm:btn-sm ${pathname==="/register"?"text-indigo-600":""}`}>Register</button>
   <div className="flex gap-6 items-center ">
-    <div className="dropdown dropdown-end">
+    {/* <div className="dropdown dropdown-end">
        
                {
-                currentUser?<p>{currentUser.displayName}</p>:''
+                currentUser?<p className='font-extralight text-yellow-400'>{currentUser.displayName}</p>:''
               }
-    </div>
+    </div> */}
           
    
      <div className=" border border-red-600 ">
@@ -72,10 +72,13 @@ const Navbar = () => {
   {currentUser ? "Logout" : "Login"}
 </button>
 
+ 
 <NavLink className={({ isActive }) =>
-                  isActive ? 'text-indigo-600' : ''
+                  isActive ? 'text-indigo-600 text-sm md:text-x font-bold':'text-red-600 text-sm md:text-x font-bold'
                 }
  to={'/extra'}>About us</NavLink>
+ 
+
 </div>
        
         </>

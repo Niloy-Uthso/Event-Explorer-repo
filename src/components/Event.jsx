@@ -5,7 +5,7 @@ const Event = ({event}) => {
     
     return (
         <div>
-            <div className="card bg-base-100 w-96 h-[100%] shadow-sm">
+            <div className="card bg-base-100 w-80 md:w-96 h-[100%] shadow-sm">
   <figure>
     <img className='w-full h-full'
       src= {event.thumbnail}
