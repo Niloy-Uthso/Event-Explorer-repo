@@ -55,7 +55,7 @@ A full-stack single-page event platform where users can discover, explore, and r
   "react-hot-toast": "^2.5.2",
   "vite": "^6.3.5"
 }
-
+``` <!-- ✅ You were missing this closing backtick line -->
 
 ---
 
@@ -66,4 +66,3 @@ A full-stack single-page event platform where users can discover, explore, and r
 git clone https://github.com/Niloy-Uthso/Event-Explorer-repo.git
 cd Event-Explorer-repo
 npm install
----
