@@ -66,3 +66,4 @@ A full-stack single-page event platform where users can discover, explore, and r
 git clone https://github.com/Niloy-Uthso/Event-Explorer-repo.git
 cd Event-Explorer-repo
 npm install
+---
